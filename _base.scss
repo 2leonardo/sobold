@@ -1,0 +1,177 @@
+/* ------------------ GENERAL SETTINGS ------------------- */
+
+html {
+
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+
+    @include respond(lg) {
+        font-size: 56.25%;
+        /* 1 rem = 9px */
+    }
+    @include respond(md) {
+        font-size: 50%;
+        /* 1 rem = 8px */
+    }
+    @include respond(sm) {
+        font-size: 53.75%;
+        /* 1 rem = 7px */
+    }
+
+
+    body {
+
+        font-size: $body_fs;
+        font-family: $family;
+        font-weight: $body_fw;
+        background-color: $white;
+        color: $blue;
+        line-height: $body_lh;
+
+
+        @include explorer {
+            overflow-x: hidden;
+        }
+
+        @include edge {
+            & {
+                overflow-x: hidden;
+            }
+        }
+
+        p {
+            margin-bottom: 2rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+
+        .h1, h1 {
+            font-size: $h1_fs;
+            line-height: $h1_lh;
+            font-weight: $h1_fw;
+            letter-spacing: 0.02px;
+            color: $white;
+        }
+
+        .h2, h2 {
+            font-size: $h2_fs;
+            line-height: $h2_lh;
+            font-weight: $h2_fw;
+            letter-spacing: 0.02px;
+            color: $blue;
+        }
+
+        .h3, h3 {
+            font-size: $h3_fs;
+            line-height: $h3_lh;
+            font-weight: $h3_fw;
+        }
+
+        .h4, h4 {
+            font-size: $h4_fs;
+            line-height: $h4_lh;
+        }
+
+
+    }
+}
+
+.page-content, .entry-content, .entry-summary {
+    margin: 0;
+}
+
+/* ----------------- FONT-STYLE -------------------*/
+
+.regular { font-weight: 400; }
+.bold { font-weight: 600; }
+.super-bold { font-weight: 700; }
+
+.uppercase { text-transform: uppercase; }
+strong { color: $blue; }
+
+/* ------------------ COLOUR PALETTE ------------------- */
+
+.white, a.white {
+    &,
+    &:focus,
+    &:visited {
+        color : $white;
+    }
+}
+.back-white {background-color : $white;}
+
+.blue, a.blue {
+    &,
+    &:focus,
+    &:visited {
+        color : $blue;
+    }
+}
+.back-blue {background-color : $blue;}
+
+.grey, a.grey {
+    &,
+    &:focus,
+    &:visited {
+        color : $grey;
+    }
+}
+.back-grey {background-color : $grey;}
+
+
+/* ---------------- LINKS, BUTTONS & HOVER STATES ------------------*/
+
+a {
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $blue;
+        font-weight: $body_fw;
+        transition: color 300ms ease-in-out;
+    }
+}
+
+a.button,
+input.button {
+
+    &,
+    &:link,
+    &:visited {
+        padding: 1.5rem 1rem;
+        text-transform: uppercase;
+        font-size: $button_fs;
+        line-height: normal;
+        cursor: pointer;
+        display: inline-block;
+        border: 4px solid $blue;
+        transition: all 300ms ease-in-out;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+
+    &__blue {
+        @include blue-button;
+    }
+
+    &__white {
+        @include white-button;
+    }
+}
+
+/* --------------- PADDINGS BLOCKS ----------------*/
+
+.padding-none { padding: 0; }
+.padding-small { padding: 3rem 0; }
+.padding-standard { padding: 6rem 0; }
+.padding-large { padding: 8rem 0; }
+.padding-xl { padding: 12rem 0; }
